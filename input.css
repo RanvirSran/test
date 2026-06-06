@@ -1,0 +1,10 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+.chatlink::hover {
+  @apply text-sm text-mindspace-nav_text hover:text-mindspace-nav_text font-semibold transition;
+  background-color: aliceblue;
+}

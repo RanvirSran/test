@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom - YouMatter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          mindspace: {
+            nav_color: '#F9F7F7',
+            bg: "#F6F1E9",
+            nav_text: "#112D4E",
+            btn_bg: "#FF9A00",
+            hover: "#4F200D"
+          }
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-mindspace-bg">
+    <!-- Header -->
+    <header class="bg-mindspace-nav_color shadow-sm border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">Mental Wellness Support</h1>
+                    <p class="text-sm text-gray-600 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <span id="member-count">24</span> people online
+                    </p>
+                </div>
+            </div>
+            <button class="px-4 py-2 bg-mindspace-hover text-white rounded-lg hover:bg-mindspace-btn_bg transition-colors">
+                Leave Room
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Chatroom -->
+    <div class="max-w-6xl mx-auto px-6 py-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-[600px]">
+            <!-- Messages Area -->
+            <div class="flex-1 overflow-y-auto p-6 space-y-6 bg-gradient-to-b from-white to-mindspace-nav_color">
+                <!-- Message 1 -->
+                <div class="flex gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
+                        <span class="text-teal-600 font-semibold text-sm">A</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2">
+                            <span class="font-semibold text-gray-900">Anonymous User</span>
+                            <span class="text-xs text-gray-500">2 min ago</span>
+                        </div>
+                        <p class="text-gray-700 mt-1">I've been struggling with anxiety lately, but this community has really helped me feel less alone.</p>
+                        <button class="mt-2 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-red-600 hover:text-red-700 font-medium flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4v2m0 4v2m0-14H8a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2h-4z"/>
+                            </svg>
+                            Report
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Message 2 -->
+                <div class="flex gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <span class="text-blue-600 font-semibold text-sm">S</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2">
+                            <span class="font-semibold text-gray-900">Anonymous User</span>
+                            <span class="text-xs text-gray-500">5 min ago</span>
+                        </div>
+                        <p class="text-gray-700 mt-1">Thank you for sharing. It takes courage to open up about these feelings. You're not alone in this.</p>
+                        <button class="mt-2 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-red-600 hover:text-red-700 font-medium flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4v2m0 4v2m0-14H8a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2h-4z"/>
+                            </svg>
+                            Report
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Message 3 -->
+                <div class="flex gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                        <span class="text-purple-600 font-semibold text-sm">M</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2">
+                            <span class="font-semibold text-gray-900">Anonymous User</span>
+                            <span class="text-xs text-gray-500">8 min ago</span>
+                        </div>
+                        <p class="text-gray-700 mt-1">Has anyone tried meditation or breathing exercises? I'd love to hear about your experiences.</p>
+                        <button class="mt-2 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-red-600 hover:text-red-700 font-medium flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4v2m0 4v2m0-14H8a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2h-4z"/>
+                            </svg>
+                            Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Input Area -->
+            <div class="border-t border-gray-200 p-4 bg-white">
+                <div class="flex gap-3">
+                    <input 
+                        type="text" 
+                        placeholder="Share your thoughts anonymously..." 
+                        class="flex-1 px-4 py-3 border border-mindspace-hover rounded-lg focus:ring-mindspace-hover focus:border-mindspace-hover"
+                    >
+                    <button class="px-6 py-3 bg-mindspace-hover text-white font-medium rounded-lg hover:bg-mindspace-btn_bg transition-colors">
+                        Send
+                    </button>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">✓ Your message will be posted anonymously</p>
+            </div>
+        </div>
+
+        <!-- Room Guidelines -->
+        <div class="mt-8 bg-mindspace-nav_color border-l-4 border-mindspace-btn_bg p-4 rounded">
+            <h3 class="font-semibold text-gray-900 mb-2">Room Guidelines</h3>
+            <ul class="text-sm text-gray-700 space-y-1">
+                <li>• Be respectful and supportive to all members</li>
+                <li>• No personal information or identifying details</li>
+                <li>• Report any inappropriate messages immediately</li>
+                <li>• This is a safe space for anonymous support</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

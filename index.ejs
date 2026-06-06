@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindSpace - Anonymous Chat Rooms</title>
+    <style>
+        .filter-btn.active {
+        background-color: #3F72AF; 
+        color: white;
+    }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      console.log(tailwind)
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          mindspace: {
+            nav_color: '#F9F7F7',
+            bg: "#F6F1E9",
+            nav_text: "#112D4E",
+            btn_bg: "#FF9A00",
+            hover: "#4F200D"
+          }
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-mindspace-bg">
+    <!-- Header -->
+    <header class="bg-mindspace-nav_color border-b border-slate-200">
+        <nav class="max-w-7xl mx-auto px-8 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                
+                <span class="text-xl font-bold text-mindspace-nav_text"><img src="logo.png" alt="MindSpace" class="h-8"></span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#" class="text-sm text-mindspace-nav_text hover:text-mindspace-nav_text font-semibold transition">Home</a>
+                <a href="#" class="text-sm text-mindspace-nav_text hover:text-mindspace-nav_text font-semibold transition">Chat Rooms</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-8 py-12">
+        <!-- Hero Section -->
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold text-slate-900 mb-3">Anonymous Chat Rooms</h1>
+            <p class="text-base text-slate-600 max-w-2xl leading-snug">Join supportive conversations or create your own safe space to connect with others.</p>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="flex gap-4 mb-10 flex-wrap items-center">
+            <input type="text" placeholder="Search chat rooms..." class="flex-1 min-w-56 px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-sm">
+            
+            <div class="flex gap-2 flex-wrap">
+                <button class="filter-btn text-mindspace-nav_text bg-slate-200 px-4 py-2 rounded-lg hover:bg-mindspace-hover hover:text-white transition font-medium text-sm" data-tag="All">All</button>
+                <button class="filter-btn bg-slate-200 text-mindspace-nav_text px-4 py-2 rounded-lg hover:bg-mindspace-hover hover:text-white transition font-medium text-sm" data-tag="Anxiety">Anxiety</button>
+                <button class="filter-btn bg-slate-200 text-mindspace-nav_text px-4 py-2 rounded-lg hover:bg-mindspace-hover hover:text-white transition font-medium text-sm" data-tag="Depression">Depression</button>
+                <button class="filter-btn bg-slate-200 text-mindspace-nav_text px-4 py-2 rounded-lg hover:bg-mindspace-hover hover:text-white transition font-medium text-sm" data-tag="Wellness">Wellness</button>
+                <button class="filter-btn bg-slate-200 text-mindspace-nav_text px-4 py-2 rounded-lg hover:bg-mindspace-hover hover:text-white transition font-medium text-sm" data-tag="Students">Students</button>
+                <button class="filter-btn bg-slate-200 text-mindspace-nav_text px-4 py-2 rounded-lg hover:bg-mindspace-hover hover:text-white transition font-medium text-sm" data-tag="Community">Community</button>
+                <button class="filter-btn bg-slate-200 text-mindspace-nav_text px-4 py-2 rounded-lg hover:bg-mindspace-hover hover:text-white transition font-medium text-sm" data-tag="Grief">Grief</button>
+                <button class="bg-mindspace-btn_bg hover:bg-mindspace-hover text-white px-4 py-2 rounded-lg transition font-medium text-sm flex items-center gap-1">
+                    <span>+</span> Create Room
+                </button>
+            </div>
+        </div>
+
+        <!-- Privacy Notice -->
+        <div class="bg-green-50 border border-green-200 rounded-xl p-4 mb-10 flex gap-3">
+            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+            </svg>
+            <div>
+                <span class="font-semibold text-sm text-slate-900">Your privacy is protected:</span>
+                <span class="text-sm text-slate-700"> All conversations are anonymous. No personal information is required or stored.</span>
+            </div>
+        </div>
+
+        <!-- Chat Room Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="chatroom bg-white rounded-lg shadow-sm hover:shadow-md transition p-4 relative" data-tag="Anxiety">
+                <div class="absolute top-4 right-4 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Anxiety Support Circle</h3>
+                <span class="inline-block bg-mindspace-hover text-white text-xs px-3 py-1 rounded-full mb-3 font-semibold">Anxiety</span>
+                <p class="text-sm text-slate-600 mb-4 leading-snug">A safe space to discuss anxiety, coping strategies, and share experiences.</p>
+                <div class="flex items-center justify-between text-xs text-slate-500 mb-4">
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        120 active
+                    </span>
+                </div>
+                <button class="w-full bg-mindspace-btn_bg hover:bg-blue-700 text-white py-2 rounded-lg transition font-medium text-sm flex items-center justify-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    Join Chat
+                </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="chatroom bg-white rounded-lg shadow-sm hover:shadow-md transition p-4 relative" data-tag="Depression">
+                <div class="absolute top-4 right-4 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Depression Warriors</h3>
+                <span class="inline-block bg-blue-600 text-white text-xs px-3 py-1 rounded-full mb-3 font-semibold">Depression</span>
+                <p class="text-sm text-slate-600 mb-4 leading-snug">Supporting each other through the challenges of depression.</p>
+                <div class="flex items-center justify-between text-xs text-slate-500 mb-4">
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        80 active
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-11a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        5 minutes ago
+                    </span>
+                </div>
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition font-medium text-sm flex items-center justify-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    Join Chat
+                </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="chatroom bg-white rounded-lg shadow-sm hover:shadow-md transition p-4 relative" data-tag="Wellness">
+                <div class="absolute top-4 right-4 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Mindfulness & Meditation</h3>
+                <span class="inline-block bg-green-600 text-white text-xs px-3 py-1 rounded-full mb-3 font-semibold">Wellness</span>
+                <p class="text-sm text-slate-600 mb-4 leading-snug">Exploring mindfulness practices and meditation techniques together.</p>
+                <div class="flex items-center justify-between text-xs text-slate-500 mb-4">
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        150 active
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-11a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        1 minute ago
+                    </span>
+                </div>
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition font-medium text-sm flex items-center justify-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    Join Chat
+                </button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="chatroom bg-white rounded-lg shadow-sm hover:shadow-md transition p-4 relative" data-tag="Students">
+                <div class="absolute top-4 right-4 w-2.5 h-2.5 bg-slate-400 rounded-full"></div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Student Mental Health</h3>
+                <span class="inline-block bg-green-600 text-white text-xs px-3 py-1 rounded-full mb-3 font-semibold">Students</span>
+                <p class="text-sm text-slate-600 mb-4 leading-snug">Academic stress, social pressures, and student life challenges.</p>
+                <div class="flex items-center justify-between text-xs text-slate-500 mb-4">
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        60 active
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-11a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        1 hour ago
+                    </span>
+                </div>
+                <button class="w-full border-2 border-slate-200 text-slate-600 hover:bg-slate-50 py-2 rounded-lg transition font-medium text-sm flex items-center justify-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                    Enter Room
+                </button>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="chatroom bg-white rounded-lg shadow-sm hover:shadow-md transition p-4 relative" data-tag="Community">
+                <div class="absolute top-4 right-4 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">LGBTQ+ Safe Space</h3>
+                <span class="inline-block bg-blue-600 text-white text-xs px-3 py-1 rounded-full mb-3 font-semibold">Community</span>
+                <p class="text-sm text-slate-600 mb-4 leading-snug">A welcoming community for LGBTQ+ individuals to share and support.</p>
+                <div class="flex items-center justify-between text-xs text-slate-500 mb-4">
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        90 active
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-11a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        3 minutes ago
+                    </span>
+                </div>
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition font-medium text-sm flex items-center justify-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    Join Chat
+                </button>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="chatroom bg-white rounded-lg shadow-sm hover:shadow-md transition p-4 relative" data-tag="Grief">
+                <div class="absolute top-4 right-4 w-2.5 h-2.5 bg-slate-400 rounded-full"></div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Grief & Loss Support</h3>
+                <span class="inline-block bg-green-600 text-white text-xs px-3 py-1 rounded-full mb-3 font-semibold">Grief</span>
+                <p class="text-sm text-slate-600 mb-4 leading-snug">Navigating loss and finding healing together.</p>
+                <div class="flex items-center justify-between text-xs text-slate-500 mb-4">
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        40 active
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-11a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        30 minutes ago
+                    </span>
+                </div>
+                <button class="w-full border-2 border-slate-200 text-slate-600 hover:bg-slate-50 py-2 rounded-lg transition font-medium text-sm flex items-center justify-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                    Enter Room
+                </button>
+            </div>
+        </div>
+    </main>
+    <!-- Modal Overlay -->
+<div id="createRoomModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <!-- Modal Box -->
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
+    <h2 class="text-xl font-bold mb-4 text-slate-800">Create a New Chat Room</h2>
+    <form id="createRoomForm" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-slate-700">Room Name</label>
+        <input type="text" name="roomName" required class="w-full mt-1 px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-slate-700">Category</label>
+        <select name="category" required class="w-full mt-1 px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+          <option value="">Select a category</option>
+          <option value="Anxiety">Anxiety</option>
+          <option value="Depression">Depression</option>
+          <option value="Wellness">Wellness</option>
+          <option value="Students">Students</option>
+          <option value="Community">Community</option>
+          <option value="Grief">Grief</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-slate-700">Description</label>
+        <textarea name="description" rows="3" required class="w-full mt-1 px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"></textarea>
+      </div>
+      <div class="flex justify-end gap-3 pt-4">
+        <button type="button" id="cancelModal" class="px-4 py-2 text-sm text-slate-600 hover:text-slate-800">Cancel</button>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+  const createBtn = document.querySelector('button:has(span:contains("+"))');
+  const modal = document.getElementById('createRoomModal');
+  const cancelBtn = document.getElementById('cancelModal');
+  const form = document.getElementById('createRoomForm');
+
+  // Open modal
+  createBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+  });
+
+  // Close modal
+  cancelBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    form.reset();
+  });
+
+  // Submit form (you can replace this with a POST request)
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const roomName = data.get('roomName');
+    const category = data.get('category');
+    const description = data.get('description');
+
+    console.log({ roomName, category, description }); // Replace with actual logic
+
+    modal.classList.add('hidden');
+    form.reset();
+  });
+</script>
+    <script>
+  const searchInput = document.querySelector('input[type="text"]');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const chatrooms = document.querySelectorAll('.chatroom');
+
+  // Filter chatrooms by tag
+  function filterChatrooms(tag) {
+    chatrooms.forEach(room => {
+      const roomTag = room.dataset.tag.toLowerCase();
+      if (tag === 'all' || roomTag.includes(tag)) {
+        room.style.display = 'block';
+      } else {
+        room.style.display = 'none';
+      }
+    });
+  }
+
+  // Handle button click
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const tag = button.dataset.tag.toLowerCase();
+      searchInput.value = tag === 'all' ? '' : tag;
+
+      // Highlight active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      filterChatrooms(tag);
+    });
+  });
+
+  // Handle search input
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    filterChatrooms(query);
+  });
+</script>
+</body>
+</html>

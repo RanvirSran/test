@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouMatter - Mental Health Support Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          mindspace: {
+            nav_color: '#F9F7F7',
+            bg: "#F6F1E9",
+            nav_text: "#112D4E",
+            btn_bg: "#FF9A00",
+            hover: "#4F200D"
+          }
+        }
+      }
+    }
+  }
+</script>
+</head>
+<div id="app"></div>
+<body class="bg-mindspace-bg">
+    <!-- Header -->
+    <header class="bg-mindspace-nav_color border-b border-slate-200">
+  <nav class="max-w-7xl mx-auto px-8 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="text-xl font-bold text-mindspace-nav_text">
+        <img src="/logo.png" alt="YouMatter" class="h-8">
+      </span>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="/" class="text-sm text-mindspace-nav_text hover:text-mindspace-nav_text font-semibold transition">Home</a>
+        <p> </p>
+      <!-- ✅ Chat button stays outside navActions -->
+      <button id="chatLink" class="text-sm text-mindspace-nav_text hover:text-mindspace-nav_text font-semibold transition">
+        Chat Rooms
+      </button>
+
+      <!-- ✅ navActions is now empty and ready for auth.js to inject -->
+      <div id="navActions"></div>
+    </div>
+  </nav>
+</header>
+
+    <!-- Hero Section -->
+    <!-- Removed gradient background, using uniform bg-slate-100 -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                You're Not Alone<br />in This Journey
+            </h1>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Connect with others who understand. Share your experiences, find support, and discover hope in our safe, anonymous community.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <!-- Added rounded-md to buttons -->
+                <button class="bg-mindspace-hover text-white px-8 py-3 rounded-md font-medium hover:bg-mindspace-btn_bg transition">
+                    Join Anonymous Chat
+                </button>
+            </div>
+        </div>
+    </section>
+ <hr />
+    <!-- Features Intro Section -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                A Safe Space for Mental Health Support
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Our platform provides the tools and community you need to navigate your mental health journey with confidence and support.
+            </p>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition">
+                    <div class="mb-6">
+                        <!-- Updated to shield icon for security/anonymity -->
+                        <i class="fa-solid fa-eye-slash fa-2xl" style="color: #FF9A00;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Complete Anonymity</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Share your thoughts and feelings without revealing your identity. Your privacy is our priority.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition">
+                    <div class="mb-6">
+                        <!-- Updated to chat bubble icon for peer support -->
+                        <i class="fa-solid fa-comments fa-2xl" style="color: #FF9A00;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">24/7 Peer Support</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Connect with others who understand your struggles. Find support any time of day or night.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition">
+                    <div class="mb-6">
+                        <!-- Updated to people/users icon for community -->
+                        <i class="fa-solid fa-user-group fa-2xl" style="color: #FF9A00;"></i>
+
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Supportive Community</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Join topic-specific chat rooms and connect with people facing similar challenges.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr />
+    <!-- CTA Section -->
+    <!-- Removed gradient background, using uniform bg-slate-100 -->
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Ready to Take the First Step?</h2>
+            <p class="text-lg text-gray-600 mb-10 leading-relaxed">
+                Join thousands of people who have found support, understanding, and hope in our community. Your journey to better mental health starts here.
+            </p>
+            <!-- Added rounded-md to button -->
+            <button class="bg-mindspace-hover text-white px-8 py-3 rounded-md font-medium hover:bg-mindspace-btn_bg transition">
+                Start Chatting Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Updated footer background to match uniform bg-slate-100 -->
+    <footer class="bg-mindspace-nav_color border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center gap-2">
+                    <img src="logo.png" alt="MindSpace Logo" class="h-8">
+                </div>
+                <nav class="flex gap-8">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 text-sm font-medium">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 text-sm font-medium">Terms of Service</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 text-sm font-medium">Crisis Resources</a>
+                </nav>
+            </div>
+            <div class="border-t border-slate-200 pt-8">
+                <p class="text-gray-600 text-sm text-center">
+                    If you're in crisis, please contact emergency services or a crisis hotline immediately.
+                </p>
+            </div>
+        </div>
+    </footer>
+<script src="/auth.js"></script>
+
+</body>
+</html>

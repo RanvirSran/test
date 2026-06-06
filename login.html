@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+        }
+
+        .form-enter {
+            animation: slideIn 0.5s ease-in-out forwards;
+        }
+
+        .form-exit {
+            animation: slideOut 0.5s ease-in-out forwards;
+            display: none;
+        }
+
+        .bg-cream { background-color: #F6F1E9; }
+        .bg-yellow-brand { background-color: #FFD93D; }
+        .bg-orange-brand { background-color: #FF9A00; }
+        .bg-brown-dark { background-color: #3D2817; }
+        .text-brown-dark { color: #3D2817; }
+        .border-yellow { border-color: #F4D961; }
+        .border-orange { border-color: #FF9A00; }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(244, 217, 97, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        button {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-mindspace-nav_color border-b border-slate-200">
+        <nav class="max-w-7xl mx-auto px-8 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                
+                <span class="text-xl font-bold text-mindspace-nav_text"><img src="logo.jpg" alt="MindSpace" class="h-8"></span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#" class="text-sm text-mindspace-nav_text hover:text-mindspace-nav_text font-semibold transition">Home</a>
+                <a href="#" class="text-sm text-mindspace-nav_text hover:text-mindspace-nav_text font-semibold transition">Chat Rooms</a>
+                <a href="#" class="text-sm text-mindspace-nav_text hover:text-mindspace-nav_text font-semibold transition">Login/Sign Up</a>
+            </div>
+        </nav>
+    </header>
+<div class="bg-cream min-h-screen flex items-center justify-center p-4">
+    
+    <div class="w-full max-w-md">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-brown-dark mb-2">Welcome</h1>
+            <p class="text-brown-dark opacity-70">Your gateway to an amazing experience</p>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="flex gap-4 mb-12">
+            <button id="loginBtn" onclick="switchForm('login')" class="flex-1 py-3 px-4 rounded-lg font-semibold transition-all bg-yellow-brand text-brown-dark hover:bg-orange-brand">
+                Login
+            </button>
+            <button id="signupBtn" onclick="switchForm('signup')" class="flex-1 py-3 px-4 rounded-lg font-semibold transition-all bg-cream text-brown-dark border-2 border-brown-dark hover:bg-yellow-brand hover:border-yellow-brand">
+                Sign Up
+            </button>
+        </div>
+
+        <!-- Login Form -->
+        <form action="/login" method="POST" id="loginForm" class="form-enter space-y-6">
+            <div>
+                <label class="block text-sm font-semibold text-brown-dark mb-2">Email Address</label>
+                <input type="email" name="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-lg border-2 border-yellow-brand bg-white text-brown-dark placeholder-brown-dark placeholder-opacity-40 transition-all" required>
+            </div>
+            <div>
+                <label class="block text-sm font-semibold text-brown-dark mb-2">Password</label>
+                <input name="password" type="password" placeholder="••••••••" class="w-full px-4 py-3 rounded-lg border-2 border-yellow-brand bg-white text-brown-dark placeholder-brown-dark placeholder-opacity-40 transition-all" required>
+            </div>
+            <button type="submit" class="w-full py-3 px-4 rounded-lg font-semibold text-white bg-orange-brand hover:bg-brown-dark transition-all">
+                Sign In
+            </button>
+            <p class="text-center text-sm text-brown-dark opacity-70">
+                Forgot your password? <a href="#" class="font-semibold text-orange-brand hover:text-brown-dark">Reset it</a>
+            </p>
+        </form>
+
+        <!-- Signup Form -->
+        <form action="/register" method="POST" id="signupForm" class="form-exit space-y-6">
+            <div>
+                <label class="block text-sm font-semibold text-brown-dark mb-2">Email Address</label>
+                <input type="email" name="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-lg border-2 border-yellow-brand bg-white text-brown-dark placeholder-brown-dark placeholder-opacity-40 transition-all" required>
+            </div>
+            <div>
+                <label class="block text-sm font-semibold text-brown-dark mb-2">Password</label>
+                <input type="password" name="password" placeholder="••••••••" class="w-full px-4 py-3 rounded-lg border-2 border-yellow-brand bg-white text-brown-dark placeholder-brown-dark placeholder-opacity-40 transition-all" required>
+            </div>
+            <div>
+                <label class="block text-sm font-semibold text-brown-dark mb-2">Confirm Password</label>
+                <input type="password" placeholder="••••••••" class="w-full px-4 py-3 rounded-lg border-2 border-yellow-brand bg-white text-brown-dark placeholder-brown-dark placeholder-opacity-40 transition-all" required>
+            </div>
+            <button type="submit"room href=""/chat class="w-full py-3 px-4 rounded-lg font-semibold text-white bg-orange-brand hover:bg-brown-dark transition-all">
+                Create Account
+            </button>
+        </form>
+
+        <!-- Footer -->
+        <p class="text-center text-sm text-brown-dark opacity-60 mt-12">
+            By continuing, you agree to our Terms of Service
+        </p>
+    </div>
+</div>
+    <script>
+        function switchForm(form) {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const loginBtn = document.getElementById('loginBtn');
+            const signupBtn = document.getElementById('signupBtn');
+
+            if (form === 'login') {
+                loginForm.classList.remove('form-exit');
+                loginForm.classList.add('form-enter');
+                signupForm.classList.remove('form-enter');
+                signupForm.classList.add('form-exit');
+                
+                loginBtn.classList.add('bg-yellow-brand', 'text-brown-dark');
+                loginBtn.classList.remove('bg-cream', 'border-brown-dark', 'border-2');
+                
+                signupBtn.classList.remove('bg-yellow-brand');
+                signupBtn.classList.add('bg-cream', 'border-2', 'border-brown-dark');
+            } else {
+                signupForm.classList.remove('form-exit');
+                signupForm.classList.add('form-enter');
+                loginForm.classList.remove('form-enter');
+                loginForm.classList.add('form-exit');
+                
+                signupBtn.classList.add('bg-yellow-brand', 'text-brown-dark');
+                signupBtn.classList.remove('bg-cream', 'border-brown-dark', 'border-2');
+                
+                loginBtn.classList.remove('bg-yellow-brand');
+                loginBtn.classList.add('bg-cream', 'border-2', 'border-brown-dark');
+            }
+        }
+
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    const res = await fetch('/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ email, password })
+    });
+
+    const data = await res.json();
+    if (data.token) {
+      localStorage.setItem('jwt', data.token);
+      window.location.href = '/'; // ✅ Redirect to home page
+    } else {
+      alert(data.error || 'Login failed');
+    }
+  });
+
+  document.getElementById('signupForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    const res = await fetch('/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ email, password })
+    });
+
+    const data = await res.json();
+    if (data.username) {
+      alert(`Registered as ${data.username}`);
+      switchForm('login');
+    } else {
+      alert(data.error || 'Registration failed');
+    }
+  });
+
+
+    </script>
+</body>
+</html>
